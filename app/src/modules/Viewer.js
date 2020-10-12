@@ -69,11 +69,14 @@ class Viewer {
     this.mediafiles.on("endoflist", (last) => {
       console.log("is last last", last)
       if (this.slideshow) {
-        this.slideshowStop()
-        Window.appmenu.slideshowstate.playing = false
-        Window.appmenu.slideshowstate.paused = false
-        Window.appmenu.reload()
-        // TODO maybeshow a message that the queue ended
+        if (UserSettings.folderEndBehaviour != "loopfolder")
+        {
+          this.slideshowStop()
+          Window.appmenu.slideshowstate.playing = false
+          Window.appmenu.slideshowstate.paused = false
+          Window.appmenu.reload()
+          // TODO maybeshow a message that the queue ended
+        }
       } else {
         switch(UserSettings.folderEndBehaviour) {
           case "openselectfolder":
@@ -151,6 +154,9 @@ class Viewer {
 
   slideshowNext(next) {
     console.log(this.slideshow)
+    if (!next && UserSettings.folderEndBehaviour == "loopfolder") {
+      next = this.mediafiles.first
+    }
     if (!next) {
       clearTimeout(this.slideshow.timer)
       return
