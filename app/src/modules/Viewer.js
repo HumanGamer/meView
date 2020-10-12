@@ -187,6 +187,7 @@ class Viewer {
   slideshowStop() {
     clearInterval(this.slideshow.timer)
     this.slideshow.timer = null
+    this.slideshow = null
   }
 
   slideshowTogglePlayPause() {
