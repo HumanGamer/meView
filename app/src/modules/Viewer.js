@@ -181,7 +181,7 @@ class Viewer {
   slideshowTimer() {
     this.slideshow.timer = setTimeout(() => {
       this.slideshowNext(this.mediafiles.next)
-    }, this.slideshow.timeout * 1000)
+    }, this.slideshow.timeout)
   }
 
   slideshowStop() {

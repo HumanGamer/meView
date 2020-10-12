@@ -92,6 +92,7 @@
 	"Operating System": "Operating System",
 	"Install": "Install",
 	"seconds": "seconds",
+	"milliseconds": "milliseconds",
 	"Slideshow interval": "Slideshow interval:",
 	"Skip interval": "Skip interval:",
 	"Current folder": "Current folder",

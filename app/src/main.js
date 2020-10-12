@@ -26,7 +26,7 @@ commander
   .option("-r, --recursive", "opens all files in a folder and is sub-folders")
   .option(
     "-s, --slideshow [timer]",
-    "start slideshow with **timer** seconds between each image (defaults to 7)",
+    "start slideshow with **timer** milliseconds between each image (defaults to 7000)",
     parseInt
   )
 commander.on("--help", () => {
